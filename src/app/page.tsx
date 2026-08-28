@@ -1,23 +1,26 @@
+"use client";
+
+import { useState } from "react";
 import EventPanel from "@/components/EventPanel";
 import VietnamMap from "@/components/VNMap";
+import type { EventItem } from "@/types/event";
 
 export default function Home() {
+  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+
   return (
     <main className="flex h-screen flex-col overflow-hidden">
-
-      {/* Main map area */}
       <div className="relative min-h-0 flex-1 overflow-hidden bg-[#101214]">
-        
-        {/* Map fills the entire area */}
         <div className="absolute inset-0">
-          <VietnamMap />
+          <VietnamMap selectedEvent={selectedEvent} />
         </div>
 
-        {/* Floating event panel */}
-<div className="absolute bottom-0 left-4 top-4 z-10">
-  <EventPanel />
-</div>
-
+        <div className="absolute bottom-0 left-4 top-4 z-10">
+          <EventPanel
+            selectedEvent={selectedEvent}
+            onSelectEvent={setSelectedEvent}
+          />
+        </div>
       </div>
     </main>
   );

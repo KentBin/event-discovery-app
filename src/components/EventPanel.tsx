@@ -8,10 +8,16 @@ import EventDetail from "./EventDetail";
 
 import { events, type EventItem } from "@/types/event";
 
-export default function EventPanel() {
+type EventPanelProps = {
+  selectedEvent: EventItem | null;
+  onSelectEvent: (event: EventItem | null) => void;
+};
+
+export default function EventPanel({
+  selectedEvent,
+  onSelectEvent,
+}: EventPanelProps) {
   const [search, setSearch] = useState("");
-  const [selectedEvent, setSelectedEvent] =
-    useState<EventItem | null>(null);
 
   const filteredEvents = useMemo(() => {
     const query = search.toLowerCase().trim();
@@ -48,16 +54,13 @@ export default function EventPanel() {
       {selectedEvent ? (
         <EventDetail
           event={selectedEvent}
-          onBack={() => setSelectedEvent(null)}
+          onBack={() => onSelectEvent(null)}
         />
       ) : (
         <>
           {/* LIST VIEW */}
 
-          <EventSearch
-            value={search}
-            onChange={setSearch}
-          />
+          <EventSearch value={search} onChange={setSearch} />
 
           <div
             className="
@@ -77,7 +80,7 @@ export default function EventPanel() {
               <EventCard
                 key={event.id}
                 event={event}
-                onClick={() => setSelectedEvent(event)}
+                onClick={() => onSelectEvent(event)}
               />
             ))}
 
