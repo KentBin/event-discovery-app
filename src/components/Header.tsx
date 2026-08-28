@@ -79,36 +79,36 @@ export default function Header() {
                         </button>
 
                         {/* Login */}
-<button
-    type="button"
-    className="flex h-10 items-center gap-2 rounded-md bg-white px-3 text-xs font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-100 sm:h-11 sm:px-5 sm:text-sm"
->
-    <PiUser className="h-4 w-4 sm:h-5 sm:w-5" />
-    <span className="hidden sm:inline">Đăng nhập</span>
-</button>
+                        <button
+                            type="button"
+                            className="flex h-10 items-center gap-2 rounded-md bg-white px-3 text-xs font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-100 sm:h-11 sm:px-5 sm:text-sm"
+                        >
+                            <PiUser className="h-4 w-4 sm:h-5 sm:w-5" />
+                            <span className="hidden sm:inline">Đăng nhập</span>
+                        </button>
                     </div>
                 </div>
 
                 {/* Navigation bar */}
-{/* Navigation bar */}
-<div className="relative z-10 mt-5 pb-5 sm:mt-6 sm:pb-6 lg:mt-7 lg:pb-7">
-    <nav className="flex flex-wrap items-center gap-1 rounded-2xl bg-[#F4F4F5] px-3 py-2 sm:gap-0 sm:rounded-full sm:px-5 sm:py-0 sm:h-[50px]">
-        {NAV_ITEMS.map(({ id, label, icon: Icon }) => (
-            <button
-                key={id}
-                type="button"
-                onClick={() => setActiveNav(id)}
-                className={`flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-2 text-xs font-medium transition sm:gap-2 sm:rounded-none sm:px-4 sm:py-0 sm:h-full sm:text-sm ${activeNav === id
-                        ? "bg-red-600 text-white sm:bg-transparent sm:border-b-2 sm:border-red-600 sm:text-red-600"
-                        : "text-neutral-600 hover:text-neutral-900 sm:border-b-2 sm:border-transparent"
-                    }`}
-            >
-                <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                {label}
-            </button>
-        ))}
-    </nav>
-</div>
+                {/* Navigation bar */}
+                <div className="relative z-10 mt-5 pb-5 sm:mt-6 sm:pb-6 lg:mt-7 lg:pb-7">
+                    <nav className="flex flex-wrap items-center gap-1 rounded-2xl bg-[#F4F4F5] px-3 py-2 sm:gap-0 sm:rounded-full sm:px-5 sm:py-0 sm:h-[50px]">
+                        {NAV_ITEMS.map(({ id, label, icon: Icon }) => (
+                            <button
+                                key={id}
+                                type="button"
+                                onClick={() => setActiveNav(id)}
+                                className={`flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-2 text-xs font-medium transition sm:gap-2 sm:rounded-none sm:px-4 sm:py-0 sm:h-full sm:text-sm ${activeNav === id
+                                    ? "bg-red-600 text-white sm:bg-transparent sm:border-b-2 sm:border-red-600 sm:text-red-600"
+                                    : "text-neutral-600 hover:text-neutral-900 sm:border-b-2 sm:border-transparent"
+                                    }`}
+                            >
+                                <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                                {label}
+                            </button>
+                        ))}
+                    </nav>
+                </div>
             </div>
         </header>
     );

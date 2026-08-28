@@ -39,7 +39,7 @@ export const events: EventItem[] = [
       "Hội An Lên Đèn — Một Đêm Phố Cổ Ngập Sắc Màu",
     image: "/events/event-3.jpg",
     date: "Dự kiến 09/2026",
-    location: "Hội An",
+    location: "Đà Nẵng",
     temperature: "+34",
     category: "Lễ hội",
     description:

@@ -21,7 +21,7 @@ export default function EventDetail({
         <button
           type="button"
           onClick={onBack}
-className="
+          className="
   flex
   h-10
   items-center
@@ -44,7 +44,7 @@ className="
         </button>
 
         <button
-className="
+          className="
   flex
   h-10
   w-10
@@ -68,7 +68,7 @@ className="
       {/* Scrollable content */}
       <div className="min-h-0 flex-1 overflow-y-auto px-1 pb-5">
         {/* Image */}
-<div className="relative h-[150px] w-full overflow-hidden rounded-[20px]">
+        <div className="relative h-[150px] w-full overflow-hidden rounded-[20px]">
           <Image
             src={event.image}
             alt={event.title}
