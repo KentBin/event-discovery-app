@@ -1,4 +1,5 @@
 import EventPanel from "@/components/EventPanel";
+import VietnamMap from "@/components/VNMap";
 
 export default function Home() {
   return (
@@ -9,9 +10,7 @@ export default function Home() {
         
         {/* Map fills the entire area */}
         <div className="absolute inset-0">
-          <div className="flex h-full w-full items-center justify-center text-white">
-            MAP GOES HERE
-          </div>
+          <VietnamMap />
         </div>
 
         {/* Floating event panel */}

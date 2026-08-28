@@ -4,11 +4,14 @@ import { useMemo, useState } from "react";
 
 import EventSearch from "./EventSearch";
 import EventCard from "./EventCard";
+import EventDetail from "./EventDetail";
 
-import { events } from "@/types/event";
+import { events, type EventItem } from "@/types/event";
 
 export default function EventPanel() {
   const [search, setSearch] = useState("");
+  const [selectedEvent, setSelectedEvent] =
+    useState<EventItem | null>(null);
 
   const filteredEvents = useMemo(() => {
     const query = search.toLowerCase().trim();
@@ -25,59 +28,67 @@ export default function EventPanel() {
     });
   }, [search]);
 
-  const handleEventClick = (eventId: number) => {
-    console.log("Selected event:", eventId);
-
-  };
-
   return (
-<aside
-  className="
-    @container
-    flex
-    h-full
-    w-[380px]
-    flex-col
-rounded-[28px]
-    bg-[#F7F7F8]
-    p-4
-    shadow-lg
-  "
->
-      {/* Search */}
-      <EventSearch
-        value={search}
-        onChange={setSearch}
-      />
+    <aside
+      className="
+        @container
+        flex
+        h-full
+        w-[380px]
+        min-w-0
+        flex-col
+        overflow-hidden
+        rounded-[28px]
+        bg-[#F7F7F8]
+        p-4
+        shadow-xl
+      "
+    >
+      {/* DETAIL VIEW */}
+      {selectedEvent ? (
+        <EventDetail
+          event={selectedEvent}
+          onBack={() => setSelectedEvent(null)}
+        />
+      ) : (
+        <>
+          {/* LIST VIEW */}
 
-      {/* Event list */}
-      <div
-        className="
-          mt-5
-          flex-1
-grid
-grid-cols-1
-@[340px]:grid-cols-2
-          content-start
-          gap-3
-          overflow-y-auto
-          pr-1
-        "
-      >
-        {filteredEvents.map((event) => (
-          <EventCard
-            key={event.id}
-            event={event}
-            onClick={() => handleEventClick(event.id)}
+          <EventSearch
+            value={search}
+            onChange={setSearch}
           />
-        ))}
 
-        {filteredEvents.length === 0 && (
-          <div className="col-span-2 py-10 text-center text-sm text-neutral-500">
-            Không tìm thấy sự kiện phù hợp.
+          <div
+            className="
+              mt-5
+              grid
+              min-h-0
+              flex-1
+              grid-cols-1
+              @[340px]:grid-cols-2
+              content-start
+              gap-3
+              overflow-y-auto
+              pr-1
+            "
+          >
+            {filteredEvents.map((event) => (
+              <EventCard
+                key={event.id}
+                event={event}
+                onClick={() => setSelectedEvent(event)}
+              />
+            ))}
+
+            {filteredEvents.length === 0 && (
+              <div className="col-span-full py-10 text-center text-sm text-neutral-500">
+                Không tìm thấy sự kiện phù hợp.
+              </div>
+            )}
           </div>
-        )}
-      </div>
+        </>
+      )}
     </aside>
   );
 }
