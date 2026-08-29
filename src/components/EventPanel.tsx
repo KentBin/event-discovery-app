@@ -117,25 +117,25 @@ export default function EventPanel({
   return (
     <>
       {/* DESKTOP: floating left panel */}
+      <div className="absolute bottom-0 left-4 top-4 z-10 hidden md:block">
       <aside
         className="
           @container
-          hidden
           h-full
           w-[380px]
           min-w-0
+          flex
           flex-col
           overflow-hidden
           rounded-[28px]
           bg-[#F7F7F8]
           p-4
           shadow-xl
-          md:flex
         "
       >
         {content}
       </aside>
-
+      </div>
       {/* MOBILE: bottom sheet */}
       <div
         className="

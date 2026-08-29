@@ -15,20 +15,10 @@ export default function Home() {
           <VietnamMap selectedEvent={selectedEvent} />
         </div>
 
-        <div className="absolute bottom-0 left-4 top-4 z-10">
           <EventPanel
             selectedEvent={selectedEvent}
             onSelectEvent={setSelectedEvent}
           />
-        </div>
-
-        {/* Mobile: EventPanel renders its own fixed bottom sheet*/}
-        <div className="md:hidden">
-          <EventPanel
-            selectedEvent={selectedEvent}
-            onSelectEvent={setSelectedEvent}
-          />
-        </div>
 
       </div>
     </main>
