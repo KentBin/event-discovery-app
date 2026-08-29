@@ -1,5 +1,3 @@
-
-
 import Image from "next/image";
 import { PiCalendarDotsLight, PiMapPin, PiSparkle } from "react-icons/pi";
 import type { EventItem } from "@/types/event";

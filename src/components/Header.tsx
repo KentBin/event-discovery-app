@@ -5,6 +5,7 @@ import { PiCaretDown, PiMapTrifold, PiMapPin, PiUser } from "react-icons/pi";
 import Image from "next/image";
 import emblem from "@/assets/images/vietnam_national_emblem.png";
 import title from "@/assets/images/title.png";
+import Countdown from "./Countdown";
 
 const NAV_ITEMS = [
     { id: "public", label: "Bản đồ công khai", icon: PiMapTrifold },
@@ -58,7 +59,7 @@ export default function Header() {
                             <span className="sm:hidden">Còn lại</span>
 
                             <span className="ml-1 font-semibold text-red-600 whitespace-nowrap">
-                                93 ngày 10 giờ
+                                <Countdown/>
                             </span>
                         </div>
 
@@ -89,7 +90,6 @@ export default function Header() {
                     </div>
                 </div>
 
-                {/* Navigation bar */}
                 {/* Navigation bar */}
                 <div className="relative z-10 mt-5 pb-5 sm:mt-6 sm:pb-6 lg:mt-7 lg:pb-7">
                     <nav className="flex flex-wrap items-center gap-1 rounded-2xl bg-[#F4F4F5] px-3 py-2 sm:gap-0 sm:rounded-full sm:px-5 sm:py-0 sm:h-[50px]">

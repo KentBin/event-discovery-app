@@ -22,22 +22,22 @@ export default function EventDetail({
           type="button"
           onClick={onBack}
           className="
-  flex
-  h-10
-  items-center
-  gap-2
-  rounded-full
-  border
-  border-neutral-200
-  bg-white
-  px-4
-  text-sm
-  font-medium
-  text-neutral-800
-  shadow-sm
-  transition
-  hover:bg-neutral-50
-"
+            flex
+            h-10
+            items-center
+            gap-2
+            rounded-full
+            border
+            border-neutral-200
+            bg-white
+            px-4
+            text-sm
+            font-medium
+            text-neutral-800
+            shadow-sm
+            transition
+            hover:bg-neutral-50
+          "
         >
           <PiArrowLeftLight className="h-4 w-4" />
           Quay lại
@@ -45,20 +45,20 @@ export default function EventDetail({
 
         <button
           className="
-  flex
-  h-10
-  w-10
-  items-center
-  justify-center
-  rounded-full
-  border
-  border-neutral-200
-  bg-white
-  text-neutral-800
-  shadow-sm
-  transition
-  hover:bg-neutral-50
-"
+            flex
+            h-10
+            w-10
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-neutral-200
+            bg-white
+            text-neutral-800
+            shadow-sm
+            transition
+            hover:bg-neutral-50
+          "
           aria-label="Trang chủ"
         >
           <PiHouse className="h-4 w-4" />
@@ -105,16 +105,16 @@ export default function EventDetail({
         <div className="mt-5">
           <div
             className="
-    inline-flex
-    items-center
-    gap-1.5
-    rounded-md
-    bg-red-700
-    px-3
-    py-1.5
-    text-xs
-    font-semibold
-    text-white
+              inline-flex
+              items-center
+              gap-1.5
+              rounded-md
+              bg-red-700
+              px-3
+              py-1.5
+              text-xs
+              font-semibold
+              text-white
             "
           >
             <PiGridFour className="h-3 w-3" />
@@ -163,8 +163,8 @@ export default function EventDetail({
               <p
                 key={index}
                 className="
-text-sm
-leading-6
+                  text-sm
+                  leading-6
                   text-neutral-700
                 "
               >

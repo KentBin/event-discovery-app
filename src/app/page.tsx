@@ -21,6 +21,15 @@ export default function Home() {
             onSelectEvent={setSelectedEvent}
           />
         </div>
+
+        {/* Mobile: EventPanel renders its own fixed bottom sheet*/}
+        <div className="md:hidden">
+          <EventPanel
+            selectedEvent={selectedEvent}
+            onSelectEvent={setSelectedEvent}
+          />
+        </div>
+
       </div>
     </main>
   );
